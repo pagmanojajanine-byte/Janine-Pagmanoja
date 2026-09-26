@@ -1,5 +1,5 @@
 /* ========================================
-   RESET & GENERAL STYLES
+   GENERAL
 ======================================== */
 
 * {
@@ -8,10 +8,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f7f4ed;
-    color: #2f3e35;
+    background: #f7f2fa;
+    color: #34283b;
     line-height: 1.6;
 }
 
@@ -21,150 +25,265 @@ body {
 ======================================== */
 
 header {
-    background: #BF40BF;
-    color: #ffffff;
+    background: linear-gradient(135deg, #5b2a70, #8e4fa6);
+    color: white;
     text-align: center;
-    padding: 60px 20px;
-    border-bottom: 6px solid #E6A8E6;
+    padding: 65px 20px;
+
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+
+    box-shadow: 0 8px 25px rgba(91, 42, 112, 0.2);
 }
 
 header h1 {
     font-size: 42px;
-    font-weight: 700;
+    margin-bottom: 12px;
     letter-spacing: 1px;
-    margin-bottom: 8px;
 }
 
 header p {
     font-size: 17px;
-    opacity: 0.9;
+    margin: 4px 0;
+    opacity: 0.92;
 }
 
 
 /* ========================================
-   MAIN CONTENT
+   NAVIGATION
 ======================================== */
 
-main {
+.navbar {
     width: 92%;
-    max-width: 1250px;
-    margin: 50px auto;
+    max-width: 1150px;
+
+    margin: -25px auto 0;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+    padding: 12px 18px;
+
+    position: sticky;
+    top: 15px;
+
+    z-index: 1000;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(91, 42, 112, 0.15);
+}
+
+.navbar a {
+    color: #66377a;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background: #7b3f98;
+    color: white;
+
+    transform: translateY(-2px);
 }
 
 
 /* ========================================
-   SECTION TITLE
+   SECTIONS
 ======================================== */
 
 section {
-    margin-bottom: 60px;
+    width: 92%;
+    max-width: 1200px;
+
+    margin: 60px auto;
 }
 
-.section-title {
+section h2 {
     text-align: center;
-    margin-bottom: 40px;
-}
 
-.section-title h2 {
-    color: #173f2a;
+    color: #66377a;
+
     font-size: 30px;
-    margin-bottom: 8px;
+
+    margin-bottom: 12px;
 }
 
-.section-title h2::after {
+section h2::after {
     content: "";
+
     display: block;
-    width: 70px;
+
+    width: 60px;
     height: 4px;
-    background: #d4a72c;
-    margin: 12px auto;
-    border-radius: 10px;
+
+    background: #b66bc9;
+
+    margin: 12px auto 25px;
+
+    border-radius: 20px;
 }
 
 .subheading {
-    color: #68746d;
-    font-size: 16px;
+    text-align: center;
+
+    color: #766b7d;
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
 }
 
 
 /* ========================================
-   OFFICIALS GRID
+   VMGO
+======================================== */
+
+.vmgo-section {
+    background: white;
+
+    width: 92%;
+    max-width: 1200px;
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(91, 42, 112, 0.1);
+
+    border: 1px solid #eadcf0;
+}
+
+.vmgo-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.vmgo-card {
+    background: #faf7fc;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    border: 1px solid #eadcf0;
+
+    border-top: 5px solid #7b3f98;
+
+    transition: all 0.3s ease;
+}
+
+.vmgo-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px rgba(91, 42, 112, 0.12);
+}
+
+.vmgo-card h3 {
+    color: #66377a;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.vmgo-card p {
+    font-size: 15px;
+
+    color: #5f5665;
+}
+
+.vmgo-card ul {
+    padding-left: 20px;
+}
+
+.vmgo-card li {
+    margin-bottom: 10px;
+}
+
+
+/* ========================================
+   OFFICIALS
 ======================================== */
 
 .officials {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 28px;
+
+    margin-top: 30px;
 }
 
-
-/* ========================================
-   OFFICIAL CARD
-======================================== */
-
 .official {
-    background: #ffffff;
-    padding: 30px 25px;
+    background: white;
+
     text-align: center;
+
+    padding: 28px 20px;
 
     border-radius: 18px;
 
-    border-top: 5px solid #d4a72c;
+    border: 1px solid #eadcf0;
 
-    box-shadow: 0 8px 25px rgba(31, 63, 45, 0.12);
+    box-shadow:
+        0 5px 18px rgba(91, 42, 112, 0.1);
 
     transition: all 0.3s ease;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.official::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    background: #BF40BF;
-    top: 0;
-    left: -100%;
-    transition: 0.3s ease;
-}
-
-.official:hover::before {
-    left: 0;
 }
 
 .official:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(31, 63, 45, 0.2);
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 28px rgba(91, 42, 112, 0.18);
 }
 
 
 /* ========================================
-   IMAGE
+   OFFICIAL IMAGE
 ======================================== */
 
 .official img {
-    width: 170px;
-    height: 170px;
+    width: 185px;
+
+    height: 185px;
 
     object-fit: cover;
 
-    border-radius: 20px;
+    object-position: center;
 
-    border: 6px solid #E6A8E6;
+    border-radius: 50%;
+
+    border: 6px solid #a765bd;
 
     padding: 4px;
 
-    background-color: #ffffff;
+    background: #f4eafa;
 
-    margin-bottom: 20px;
-
-    transition: transform 0.3s ease;
-}
-
-.official:hover img {
-    transform: scale(1.05);
+    margin-bottom: 16px;
 }
 
 
@@ -173,10 +292,11 @@ section {
 ======================================== */
 
 .official h3 {
-    color: #173f2a;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 8px;
+    color: #66377a;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
 }
 
 
@@ -185,21 +305,315 @@ section {
 ======================================== */
 
 .position {
-    color: #68746d;
+    color: #7b7180;
+
     font-size: 15px;
 }
 
 
 /* ========================================
-   DIVIDER
+   EVENT SECTION
 ======================================== */
 
-.official .line {
-    width: 45px;
-    height: 3px;
-    background: #d4a72c;
-    margin: 12px auto;
-    border-radius: 5px;
+.event-section {
+    width: 92%;
+
+    max-width: 1200px;
+
+    margin: 60px auto;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(91, 42, 112, 0.1);
+}
+
+.event-section h2 {
+    text-align: center;
+
+    color: #66377a;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.event-description {
+    text-align: center;
+
+    color: #716777;
+
+    font-size: 16px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   EVENT GRID
+======================================== */
+
+.event-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* ========================================
+   EVENT CARD
+======================================== */
+
+.event-card {
+    background-color: #faf7fc;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid #eadcf0;
+
+    box-shadow:
+        0 5px 15px rgba(91, 42, 112, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 25px rgba(91, 42, 112, 0.17);
+}
+
+
+/* ========================================
+   EVENT IMAGE
+======================================== */
+
+.event-card img {
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    background: #eee4f3;
+}
+
+
+/* ========================================
+   EVENT INFORMATION
+======================================== */
+
+.event-info {
+    padding: 22px;
+
+    text-align: center;
+}
+
+.event-info h3 {
+    color: #66377a;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.event-info p {
+    color: #716777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   MEDIA TITLES
+======================================== */
+
+.media-title {
+    color: #66377a;
+
+    text-align: center;
+
+    font-size: 23px;
+
+    margin-top: 35px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ========================================
+   PHOTO GALLERY
+======================================== */
+
+.photo-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+}
+
+
+/* ========================================
+   PHOTO CARD
+======================================== */
+
+.photo-card {
+    background-color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border: 1px solid #eadcf0;
+
+    box-shadow:
+        0 5px 15px rgba(91, 42, 112, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(91, 42, 112, 0.17);
+}
+
+
+/* ========================================
+   PHOTO
+======================================== */
+
+.photo-card img {
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    background: #eee4f3;
+}
+
+
+/* ========================================
+   PHOTO TITLE
+======================================== */
+
+.photo-card h3 {
+    color: #66377a;
+
+    font-size: 18px;
+
+    padding: 16px;
+}
+
+
+/* ========================================
+   VIDEO GALLERY
+======================================== */
+
+.video-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+    margin-bottom: 50px;
+}
+
+
+/* ========================================
+   VIDEO CARD
+======================================== */
+
+.video-card {
+    background-color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid #eadcf0;
+
+    box-shadow:
+        0 5px 15px rgba(91, 42, 112, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(91, 42, 112, 0.17);
+}
+
+
+/* ========================================
+   VIDEO
+======================================== */
+
+.video-card video {
+    width: 100%;
+
+    height: 300px;
+
+    display: block;
+
+    background-color: #2f1838;
+}
+
+
+/* ========================================
+   VIDEO INFO
+======================================== */
+
+.video-info {
+    padding: 22px;
+
+    text-align: center;
+}
+
+.video-info h3 {
+    color: #66377a;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.video-info p {
+    color: #716777;
+
+    font-size: 14px;
 }
 
 
@@ -208,89 +622,198 @@ section {
 ======================================== */
 
 footer {
-    background: #BF40BF;
-    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        #542b68,
+        #7b3f98
+    );
+
+    color: white;
+
     text-align: center;
+
     padding: 30px 20px;
+
     margin-top: 70px;
 
-    border-top: 5px solid #E6A8E6;
+    border-top-left-radius: 30px;
+
+    border-top-right-radius: 30px;
 }
 
 footer p {
-    font-size: 14px;
     margin: 4px 0;
-}
 
-footer p:first-child {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
 }
 
 
 /* ========================================
-   TABLET RESPONSIVE
+   RESPONSIVE - 1000px
 ======================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-    header h1 {
-        font-size: 35px;
+    .vmgo-container {
+        grid-template-columns: 1fr;
     }
 
-    .officials {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    main {
-        width: 90%;
+    .event-gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 }
 
 
 /* ========================================
-   MOBILE RESPONSIVE
+   RESPONSIVE - 768px
 ======================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     header {
-        padding: 45px 15px;
+        padding: 50px 20px;
     }
 
     header h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     header p {
         font-size: 15px;
     }
 
-    main {
-        width: 90%;
-        margin: 35px auto;
+    section {
+        width: 92%;
+
+        margin: 40px auto;
     }
 
-    .section-title h2 {
+    section h2 {
         font-size: 25px;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        flex-wrap: wrap;
+
+        padding: 10px;
+
+        width: 95%;
+
+        top: 8px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+
+        padding: 8px 12px;
+    }
+
+
+    /* Officials */
+
+    .official img {
+        width: 165px;
+
+        height: 165px;
+    }
+
+
+    /* Events */
+
+    .event-section {
+        width: 92%;
+
+        padding: 30px 22px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - 600px
+======================================== */
+
+@media (max-width: 600px) {
+
+    .event-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card img {
+        height: 250px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .video-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE - 480px
+======================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 40px 15px;
+
+        border-bottom-left-radius: 25px;
+
+        border-bottom-right-radius: 25px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .navbar {
+        gap: 5px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+
+        padding: 7px 10px;
     }
 
     .officials {
         grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .official {
-        padding: 25px 20px;
     }
 
     .official img {
-        width: 150px;
-        height: 150px;
+        width: 155px;
+
+        height: 155px;
+    }
+
+    .event-section {
+        width: 92%;
+
+        padding: 25px 18px;
+    }
+
+    .photo-card img {
+        height: 280px;
+    }
+
+    .video-card video {
+        height: 250px;
     }
 
     footer {
-        margin-top: 40px;
-        padding: 25px 15px;
+        padding: 25px 10px;
     }
 }
